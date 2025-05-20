@@ -19,7 +19,7 @@
             </div>
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="/home" class="navbar-brand">
                         <h1 class="text-primary display-6">LaptopShop</h1>
                     </a>
                     <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
@@ -35,11 +35,9 @@
                             <div class=" d-flex m-3 me-0">
                                 <a href="/cart" class="position-relative me-4 my-auto">
                                     <i class="fa fa-shopping-bag fa-2x"></i>
-                                    <c:if test="${sessionScope.cartSum!=null}">
-                                        <span
-                                            class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                            style="top: -5px; left: 15px; height: 20px; min-width: 20px;">${sessionScope.cartSum}</span>
-                                    </c:if>
+                                    <span
+                                        class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                                        style="top: -5px; left: 15px; height: 20px; min-width: 20px;">${sessionScope.cartSum}</span>
                                 </a>
                                 <div class="dropdown my-auto">
                                     <a href="#" class="dropdown" role="button" id="dropdownMenuLink"
@@ -55,8 +53,8 @@
                                                 ${sessionScope.name}
                                             </div>
                                         </li>
-                                        <li><a class="dropdown-item" href="#">Quản lý tài khoản</a></li>
-                                        <li><a class="dropdown-item" href="#">Lịch sử mua hàng</a></li>
+                                        <li><a class="dropdown-item" href="/account-setting">Quản lý tài khoản</a></li>
+                                        <li><a class="dropdown-item" href="/order-history">Lịch sử mua hàng</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>

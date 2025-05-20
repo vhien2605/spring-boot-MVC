@@ -2,34 +2,41 @@ package com.example.SellerWeb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication()
 public class SellerWebApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SellerWebApplication.class, args);
-        System.out.println("server is running at http:://localhost:8080");
-        // 1 Khi sử dụng default spring security thì nếu dùng form submit mặc định phải
-        // thêm token CSRF(cơ chế protect của spring security)
+        // SpringApplication.run(SellerWebApplication.class, args);
+        // System.out.println("server is running at http:://localhost:8080");
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String storedHashedPassword = encoder.encode("hienhien123@");
+        String inputPassword = "hienhien123@";
+        boolean isMatch = encoder.matches(inputPassword, storedHashedPassword);
+        System.out.println(storedHashedPassword);
+        // module này và module cuối tập trung chủ yếu về mảng tối ưu hiệu năng như phân
+        // trang, tối ưu query
 
-        // 2 Spring data Jpa support cơ chế nạp dữ liệu (Có thể dùng cách nạp này hoặc
-        // dùng method Repository bình thường)
-        // Ví dụ user có 1 cart thì khi mình getter nó sẽ nạp luôn data cart vào object
-        // user
+        // 1 Pagination : phân trang chỉ render data đủ dùng để tiết kiệm băng thông,
+        // tăng trải nghiệm người dùng
 
-        // có hai kiểu nạp
-        // FetchType.LAZY (ManyToMany, ManyToOne):
-        // --Cart không được nạp khi bạn tìm User.
-        // Thay vào đó, Cart sẽ được nạp khi bạn truy cập vào trường Cart lần đầu tiên
-        // (Lazy Loading).
-        // Điều này yêu cầu EntityManager hoặc Hibernate Session vẫn phải hoạt động.
-        // -- Không nạp ngay là do Collection rất tốn bộ nhớ
+        // 2 Khái niệm OFFSET LIMIT : giới hạn bản ghi trong SQL
+        // LIMIT chỉ giới hạn bản ghi trả về, tiết kiệm khối dữ liệu truyền tải . Chứ
+        // hiệu năng thì vẫn phải scan tất cả bản ghi sau đó limit return result
 
-        // FetchType.EAGER:(OneToOne, ManyToOne)
-        // --Cart được nạp ngay lập tức khi bạn truy vấn User (Eager Loading).
-        // Truy vấn SQL sẽ sử dụng JOIN để lấy dữ liệu của cả User và Cart.
-        // Có relationship thì getter luôn nó auto join lấy data cho mình
-        // -- Nạp ngay vì 1 Object không tốn quá nhiều memmory
+        // OFFSET là bỏ qua n bản ghi đầu tiên. Vai trò cũng khá tương đương LIMIT
 
-        // 3
+        // 3 ta sẽ dùng Query Parameter để Pagination. Query parameter giúp cung cấp
+        // thêm thông tin cho url mà không cần phải định nghĩa route mới
+        // vd http://localhost:8080/home?page=1&limit=10
+
+        // 4 Các loại reporitory hay dùng với Spring
+        // CrudRepository
+        // JpaRepository
+        // PagingAndSortingRepository
+
+        // Thực chất các Repository này có thể extends nhau là bậc parent child của nhau
+        // JpaRepository kế thừa cả interface CrudRepository và
+        // PagingAndSortingRepository rồi
     }
 }

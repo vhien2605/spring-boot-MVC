@@ -63,8 +63,9 @@ public class ProductController {
     }
 
     @GetMapping("/admin/product")
-    public String getProducts(Model model) {
+    public String getProducts(Model model, @RequestParam("page") long page) {
         List<Product> products = this.productService.findAllProduct();
+        System.out.println(page);
         model.addAttribute("products", products);
         return "admin/product/show";
     }

@@ -73,9 +73,11 @@ public class SecurityConfiguration {
                 // Do việc permit như vậy dẫn đến khá nhiều Bug , nên phải config lại nhiều.
                 // Khuyến khích sau này redone project không làm như này
                 // Chỉ cần config permit url đến các static resources để phục vụ front-end thôi
-                http.
+                http
 
-                                formLogin(formLogin -> formLogin
+                                .csrf(c -> c.disable())
+
+                                .formLogin(formLogin -> formLogin
                                                 .loginPage("/login") // chỉ định url của page login
                                                 .defaultSuccessUrl("/home", true)
                                                 .successHandler(myAuthenticationSuccessHandler()) // custom redirect

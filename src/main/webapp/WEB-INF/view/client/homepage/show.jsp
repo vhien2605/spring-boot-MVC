@@ -104,6 +104,7 @@
                                                                     method="POST">
                                                                     <input type="hidden" name="${_csrf.parameterName}"
                                                                         value="${_csrf.token}" />
+                                                                    <input type="hidden" name="quantity" value="1" />
                                                                     <button type="submit"
                                                                         class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">
                                                                         <i

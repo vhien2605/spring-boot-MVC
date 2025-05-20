@@ -92,23 +92,30 @@
                                             ${product.getShortDesc()}
                                         </p>
 
-                                        <div class="input-group quantity mb-5" style="width: 100px;">
-                                            <div class="input-group-btn">
-                                                <button class="btn btn-sm btn-minus rounded-circle bg-light border">
-                                                    <i class="fa fa-minus"></i>
-                                                </button>
+                                        <form action="/add-to-cart/${product.getId()}" method="POST">
+                                            <div class="input-group quantity mb-5" style="width: 100px;">
+                                                <div class="input-group-btn">
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                                <input type="text" name="quantity"
+                                                    class="form-control form-control-sm text-center border-0 quantity-input"
+                                                    value="1">
+                                                <div class="input-group-btn">
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <input type="text" class="form-control form-control-sm text-center border-0"
-                                                value="1">
-                                            <div class="input-group-btn">
-                                                <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                                    <i class="fa fa-plus"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <a href="#"
-                                            class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
-                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            <button type="submit"
+                                                class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">
+                                                <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                            </button>
+                                        </form>
+
                                     </div>
                                     <div class="col-lg-12">
                                         <nav>

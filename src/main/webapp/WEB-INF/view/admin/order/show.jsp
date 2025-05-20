@@ -28,7 +28,6 @@
                                 <div class="row">
                                     <div class="d-flex justify-content-between">
                                         <h3>Table orders</h3>
-                                        <a href="/admin/user/create" class="btn btn-primary">Create a user</a>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -37,23 +36,29 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">Id</th>
-                                                    <th scope="col">Email</th>
-                                                    <th scope="col">Name</th>
+                                                    <th scope="col">User Id</th>
+                                                    <th scope="col">Receiver Name</th>
+                                                    <th scope="col">Receiver Address</th>
+                                                    <th scope="col">Receiver Phone</th>
+                                                    <th scope="col">Status</th>
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <c:forEach items="${users}" var="user">
+                                                <c:forEach items="${orders}" var="order">
                                                     <tr>
-                                                        <th scope="row">${user.getId()}</th>
-                                                        <td>${user.getEmail()}</td>
-                                                        <td>${user.getName()}</td>
+                                                        <th scope="row">${order.getId()}</th>
+                                                        <td>${order.getUser().getId()}</td>
+                                                        <td>${order.getReceiverName()}</td>
+                                                        <td>${order.getReceiverAddress()}</td>
+                                                        <td>${order.getReceiverPhone()}</td>
+                                                        <td>${order.getStatus()}</td>
                                                         <td>
-                                                            <a href="/admin/user/${user.getId()}"
+                                                            <a href="/admin/order/${order.getId()}"
                                                                 class="btn btn-success">View</a>
-                                                            <a href="/admin/user/${user.getId()}/update"
+                                                            <a href="/admin/order/${order.getId()}/update"
                                                                 class="btn btn-warning">Update</a>
-                                                            <a href="/admin/user/${user.getId()}/delete"
+                                                            <a href="/admin/order/${order.getId()}/delete"
                                                                 class="btn btn-danger">Delete</a>
                                                         </td>
                                                     </tr>
@@ -62,7 +67,9 @@
                                         </table>
                                     </div>
                                 </div>
+                               
                             </div>
+
                     </main>
                     <jsp:include page="../layout/footer.jsp" />
                 </div>

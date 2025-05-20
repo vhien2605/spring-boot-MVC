@@ -126,46 +126,72 @@
                                     </tbody>
                                 </table>
                             </div>
-
-                            <div class="mt-5 row g-4 justify-content-start">
-                                <div class="col-12 col-md-8">
-                                    <div class="bg-light rounded">
-                                        <div class="p-4">
-                                            <h1 class="display-6 mb-4">Thông tin đơn hàng</h1>
-                                            <div class="d-flex justify-content-between mb-4">
-                                                <h5 class="mb-0 me-4">Giá trị đơn hàng:
-
-                                                </h5>
-                                                <p class="mb-0">
-                                                    <fmt:formatNumber type="number" value="${totalCartPrice}" /> đ
-                                                </p>
-
+                            <form:form action="/place-order" method="POST" modelAttribute="receiverUser">
+                                <div class="mt-5 row g-4 justify-content-between">
+                                    <!-- Khối mới ở bên trái -->
+                                    <div class="col-12 col-md-5">
+                                        <div class="bg-light rounded p-4">
+                                            <h1 class="display-6 mb-4">Thông tin người nhận</h1>
+                                            <div class="mb-3">
+                                                <label for="name">Tên người nhận</label>
+                                                <input name="name" id="name" class="form-control" required="true" />
+                                                <label for="address">Địa chỉ</label>
+                                                <input name="address" id="address" class="form-control"
+                                                    required="true" />
+                                                <label for="phone">Số điện thoại</label>
+                                                <input name="phone" id="phone" class="form-control" required="true" />
                                             </div>
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="mb-0 me-4">Phí vận chuyển: 5%</h5>
-                                                <div class="">
+                                            <a href="/cart" class="btn btn-primary">Quay lại giỏ hàng</a>
+                                        </div>
+                                    </div>
+                                    <!-- Khối đã có ở bên phải -->
+                                    <div class="col-12 col-md-7">
+                                        <div class="bg-light rounded">
+                                            <div class="p-4">
+                                                <h1 class="display-6 mb-4">Thông tin đơn hàng</h1>
+                                                <div class="d-flex justify-content-between mb-4">
+                                                    <h5 class="mb-0 me-4">Giá trị đơn hàng:</h5>
                                                     <p class="mb-0">
-                                                        <fmt:formatNumber type="number"
-                                                            value="${totalCartPrice*5/100}" />
-                                                        VNĐ
+                                                        <fmt:formatNumber type="number" value="${totalCartPrice}" /> đ
                                                     </p>
                                                 </div>
+                                                <div class="d-flex justify-content-between mb-4">
+                                                    <h5 class="mb-0 me-4">Phí vận chuyển: 5%</h5>
+                                                    <div class="">
+                                                        <p class="mb-0">
+                                                            <fmt:formatNumber type="number"
+                                                                value="${totalCartPrice*5/100}" />
+                                                            VNĐ
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <h5 class="mb-0 me-4">Hình thức thanh toán : </h5>
+                                                    <div class="">
+                                                        <p class="mb-0">
+                                                            Thanh toán khi nhận hàng
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p class="mb-0 text-end">Shipping to Hà Nội.</p>
                                             </div>
-                                            <p class="mb-0 text-end">Shipping to Hà Nội.</p>
+                                            <div
+                                                class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
+                                                <h5 class="mb-0 ps-4 me-4">Tổng thu:</h5>
+                                                <p class="mb-0">
+                                                    <fmt:formatNumber type="number" value="${totalCartPrice*105/100}" />
+                                                    VNĐ
+                                                </p>
+                                            </div>
+                                            <button
+                                                class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
+                                                type="submit">Xác nhận thanh toán và đặt hàng</button>
                                         </div>
-                                        <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
-                                            <h5 class="mb-0 ps-4 me-4">Tổng thu:</h5>
-                                            <p class="mb-0">
-                                                <fmt:formatNumber type="number" value="${totalCartPrice*105/100}" />
-                                                VNĐ
-                                            </p>
-                                        </div>
-                                        <a href="/checkout" class="btn border-secondary rounded-pill px-4 py-3 text-primary
-                                            text-uppercase mb-4 ms-4">Đến trang thanh toán</a>
                                     </div>
                                 </div>
-                            </div>
+                            </form:form>
                         </div>
+
                     </div>
                     <!-- Cart Page End -->
                     <!-- Footer Start -->

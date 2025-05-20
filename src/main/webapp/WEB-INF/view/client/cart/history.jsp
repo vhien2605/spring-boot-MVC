@@ -52,11 +52,11 @@
 
                     <!-- Single Page Header start -->
                     <div class="container-fluid page-header py-5">
-                        <h1 class="text-center text-white display-6">Cart</h1>
+                        <h1 class="text-center text-white display-6">Order History</h1>
                         <ol class="breadcrumb justify-content-center mb-0">
                             <li class="breadcrumb-item"><a href="/home">Home</a></li>
                             <li class="breadcrumb-item"><a href="/page">Pages</a></li>
-                            <li class="breadcrumb-item active text-white">Cart</li>
+                            <li class="breadcrumb-item active text-white">Order History</li>
                         </ol>
                     </div>
                     <!-- Single Page Header End -->
@@ -74,98 +74,82 @@
                                             <th scope="col">Price</th>
                                             <th scope="col">Quantity</th>
                                             <th scope="col">Total</th>
-                                            <th scope="col">Handle</th>
+                                            <th scope="col">Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <c:forEach items="${cartDetails}" var="cartDetail">
+                                        <c:forEach items="${orders}" var="order">
                                             <tr>
                                                 <th scope="row">
                                                     <div class="d-flex align-items-center">
-                                                        <a href="/product/${cartDetail.getProduct().getId()}"><img
-                                                                src="/image/product/${cartDetail.getProduct().getImage()}"
-                                                                class="img-fluid me-5 rounded-circle"
-                                                                style="width: 80px; height: 80px;" alt=""></a>
+                                                        <p class="mb-0 mt-4">Order Id : ${order.getId()}</p>
                                                     </div>
                                                 </th>
                                                 <td>
-                                                    <p class="mb-0 mt-4">${cartDetail.getProduct().getName()}</p>
                                                 </td>
                                                 <td>
                                                     <p class="mb-0 mt-4">
                                                         <fmt:formatNumber type="number"
-                                                            value=" ${cartDetail.getProduct().getPrice()}" />
+                                                            value=" ${order.getTotalPrice()}" />
                                                         VNĐ
                                                     </p>
                                                 </td>
                                                 <td>
                                                     <div class="input-group quantity mt-4" style="width: 100px;">
-                                                        <input type="text" class="form-control form-control-sm border-0"
-                                                            value="${cartDetail.getQuantity()}" ?>
+
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <p class="mb-0 mt-4" data-cart-detail-id="${cartDetail.id}">
-                                                        <fmt:formatNumber type="number"
-                                                            value="${cartDetail.price * cartDetail.quantity}" /> đ
+                                                    <p class="mb-0 mt-4">
                                                     </p>
                                                 </td>
                                                 <td>
-                                                    <form action="/delete-from-cart/${cartDetail.getId()}"
-                                                        method="POST">
-                                                        <input type="hidden" name="${_csrf.parameterName}"
-                                                            value="${_csrf.token}" />
-                                                        <button type="submit"
-                                                            class="btn btn-md rounded-circle bg-light border mt-4">
-                                                            <i class="fa fa-times text-danger"></i>
-                                                        </button>
-                                                    </form>
                                                 </td>
                                             </tr>
+                                            <c:forEach items="${order.getOrderDetails()}" var="orderDetail">
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="/product/${orderDetail.getProduct().getId()}"><img
+                                                                    src="/image/product/${orderDetail.getProduct().getImage()}"
+                                                                    class="img-fluid me-5 rounded-circle"
+                                                                    style="width: 80px; height: 80px;" alt=""></a>
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <p class="mb-0 mt-4">${orderDetail.getProduct().getName()}</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 mt-4">
+                                                            <fmt:formatNumber type="number"
+                                                                value=" ${orderDetail.getProduct().getPrice()}" />
+                                                            VNĐ
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group quantity mt-4" style="width: 100px;">
+                                                            <input type="text"
+                                                                class="form-control form-control-sm border-0"
+                                                                value="${orderDetail.getQuantity()}" ?>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 mt-4" data-cart-detail-id="${orderDetail.id}">
+                                                            <fmt:formatNumber type="number"
+                                                                value="${orderDetail.price * orderDetail.quantity}" /> đ
+                                                        </p>
+                                                    </td>
+                                                    <td>
+
+                                                    </td>
+                                                </tr>
+                                            </c:forEach>
                                         </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
-
-                            <div class="mt-5 row g-4 justify-content-start">
-                                <div class="col-12 col-md-8">
-                                    <div class="bg-light rounded">
-                                        <div class="p-4">
-                                            <h1 class="display-6 mb-4">Thông tin đơn hàng</h1>
-                                            <div class="d-flex justify-content-between mb-4">
-                                                <h5 class="mb-0 me-4">Giá trị đơn hàng:
-
-                                                </h5>
-                                                <p class="mb-0">
-                                                    <fmt:formatNumber type="number" value="${totalCartPrice}" /> đ
-                                                </p>
-
-                                            </div>
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="mb-0 me-4">Phí vận chuyển: 5%</h5>
-                                                <div class="">
-                                                    <p class="mb-0">
-                                                        <fmt:formatNumber type="number"
-                                                            value="${totalCartPrice*5/100}" />
-                                                        VNĐ
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <p class="mb-0 text-end">Shipping to Hà Nội.</p>
-                                        </div>
-                                        <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
-                                            <h5 class="mb-0 ps-4 me-4">Tổng thu:</h5>
-                                            <p class="mb-0">
-                                                <fmt:formatNumber type="number" value="${totalCartPrice*105/100}" />
-                                                VNĐ
-                                            </p>
-                                        </div>
-                                        <a href="/checkout" class="btn border-secondary rounded-pill px-4 py-3 text-primary
-                                            text-uppercase mb-4 ms-4">Đến trang thanh toán</a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
+
                     </div>
                     <!-- Cart Page End -->
                     <!-- Footer Start -->
