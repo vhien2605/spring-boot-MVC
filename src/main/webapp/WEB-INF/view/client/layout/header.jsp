@@ -28,8 +28,17 @@
                     </button>
                     <div class="collapse navbar-collapse bg-white justify-content-between mx-5" id="navbarCollapse">
                         <div class="navbar-nav">
-                            <a href="/home" class="nav-item nav-link active">Trang chủ</a>
-                            <a href="/shop" class="nav-item nav-link">Sản phẩm</a>
+                            <c:set var="uri" value="${pageContext.request.requestURI}" />
+
+                            <a href="/home" class="nav-item nav-link ${uri == '/home' ? 'active' : ''}">
+                                Trang chủ
+                            </a>
+
+                            <a href="/shop" class="nav-item nav-link ${uri.startsWith('/shop') ? 'active' : ''}">
+                                Sản phẩm
+                            </a>
+
+
                         </div>
                         <c:if test="${not empty pageContext.request.userPrincipal.name}">
                             <div class=" d-flex m-3 me-0">

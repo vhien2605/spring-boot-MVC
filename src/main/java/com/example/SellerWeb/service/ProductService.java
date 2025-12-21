@@ -33,10 +33,6 @@ public class ProductService {
         this.productRepository.save(product);
     }
 
-    public List<Product> findAllProduct() {
-        return this.productRepository.findAll();
-    }
-
     public Product findProductById(long id) {
         return this.productRepository.findById(id);
     }
@@ -80,4 +76,25 @@ public class ProductService {
     public long handleCountProduct() {
         return this.productRepository.count();
     }
+
+    public List<Product> findByTargetAndPrice(String target, Double maxPrice) {
+        return this.productRepository.findByTargetAndPriceLessThanEqual(target, maxPrice);
+    }
+
+    public List<Product> findAllProduct() {
+        return this.productRepository.findAll();
+    }
+
+    public List<Product> findByTarget(String target) {
+        return this.productRepository.findByTarget(target);
+    }
+
+    public List<Product> findByPrice(Double maxPrice) {
+        return this.productRepository.findByPriceLessThanEqual(maxPrice);
+    }
+
+    public List<Product> searchByName(String keyword) {
+        return productRepository.findByNameContainingIgnoreCase(keyword);
+    }
+
 }
