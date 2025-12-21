@@ -33,4 +33,4 @@ build/
 .vscode/
 
 # Spring Boot config
-/src/main/resources/application.properties
+src/main/resources/application.properties
