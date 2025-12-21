@@ -12,6 +12,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>SellerWeb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>SellerWeb</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
