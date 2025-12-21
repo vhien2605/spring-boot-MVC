@@ -94,13 +94,16 @@ public class SecurityConfiguration {
 
                                                 .requestMatchers("/home", "/login", "/product/**", "/client/**",
                                                                 "/css/**", "/js/**",
-                                                                "/image/**")
+                                                                "/image/**","/error/**")
                                                 .permitAll() // cho phép tất cả các url này để phục vụ cho phần resouces
                                                              // render
 
                                                 .requestMatchers("/admin/**").hasRole("ADMIN")
                                                 .requestMatchers("/register").permitAll()
-                                                .anyRequest().authenticated())
+                                                .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
+                                                .anyRequest().authenticated()
+
+                                )
                                 // handling 403 lỗi không đủ Role truy cập
                                 .exceptionHandling(ex -> ex.accessDeniedPage("/access-reject"))
                                 .rememberMe(r -> r.rememberMeServices(rememberMeServices()));
