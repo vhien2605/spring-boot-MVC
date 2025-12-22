@@ -7,7 +7,7 @@
                     <div class="row g-4">
                         <div class="col-lg-3">
                             <a href="#">
-                                <h1 class="text-primary mb-0">LaptopShop</h1>
+                                <h1 class="text-primary mb-0">FARMZY</h1>
                                 <p class="text-secondary mb-0">Sản phẩm chính hãng</p>
                             </a>
                         </div>

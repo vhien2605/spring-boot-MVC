@@ -20,7 +20,7 @@
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
                     <a href="/home" class="navbar-brand">
-                        <h1 class="text-primary display-6">LaptopShop</h1>
+                        <h1 class="text-primary display-6">FARMZY</h1>
                     </a>
                     <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse">

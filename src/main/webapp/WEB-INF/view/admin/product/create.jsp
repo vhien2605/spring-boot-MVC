@@ -116,11 +116,11 @@
                                                         <label for="target">Target</label>
                                                         <form:select path="target" class="form-select mb-3" id="target"
                                                             aria-label="Default select example">
-                                                            <form:option value="GAMING">Gaming</form:option>
-                                                            <form:option value="SINHVIEN-VANPHONG">Sinh Viên/Văn phòng
+                                                            <form:option value="FOOD">Thực phẩm</form:option>
+                                                            <form:option value="DRINK">Đồ uống
                                                             </form:option>
-                                                            <form:option value="MONG-NHE">Mỏng nhẹ</form:option>
-                                                            <form:option value="DOANH_NHAN">Doanh nhân</form:option>
+                                                            <form:option value="TREE">Thảo dược</form:option>
+                                                            <form:option value="CUSTOM">Vải may mặc</form:option>
                                                         </form:select>
                                                     </div>
                                                 </div>

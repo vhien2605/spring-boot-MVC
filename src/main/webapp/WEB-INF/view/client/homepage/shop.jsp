@@ -7,7 +7,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Laptop Shop</title>
+                <title>FARMZY</title>
                 <!-- Google Web Fonts -->
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,25 +126,21 @@
                                                     <h4>Phân loại</h4>
                                                     <select name="target" class="form-select">
                                                         <option value="">-- Tất cả --</option>
-                                                        <option value="THIET-KE-DO-HOA"
-                                                            ${param.target=='THIET-KE-DO-HOA' ? 'selected' : '' }>
-                                                            THIẾT KẾ ĐỒ HỌA
+                                                        <option value="FOOD"
+                                                            ${param.target=='FOOD' ? 'selected' : '' }>
+                                                            Thực phẩm
                                                         </option>
-                                                        <option value="SINHVIEN-VANPHONG"
-                                                            ${param.target=='SINHVIEN-VANPHONG' ? 'selected' : '' }>
-                                                            SINH VIÊN - VĂN PHÒNG
+                                                        <option value="DRINK"
+                                                            ${param.target=='DRINK' ? 'selected' : '' }>
+                                                            Đồ uống
                                                         </option>
-                                                        <option value="MONG-NHE" ${param.target=='MONG-NHE' ? 'selected'
+                                                        <option value="TREE" ${param.target=='TREE' ? 'selected'
                                                             : '' }>
-                                                            MỎNG NHẸ
+                                                            Thảo dược
                                                         </option>
-                                                        <option value="GAMING" ${param.target=='GAMING' ? 'selected'
+                                                        <option value="CUSTOM" ${param.target=='CUSTOM' ? 'selected'
                                                             : '' }>
-                                                            GAMING
-                                                        </option>
-                                                        <option value="DOANH-NHAN" ${param.target=='DOANH-NHAN'
-                                                            ? 'selected' : '' }>
-                                                            DOANH NHÂN
+                                                            Vải may mặc
                                                         </option>
                                                     </select>
                                                 </div>
@@ -182,100 +178,7 @@
                                                 </button>
                                             </form>
 
-                                            <!-- <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <h4>Phân loại</h4>
-                                                    <ul class="list-unstyled fruite-categorie">
-                                                        <li>
-                                                            <div class="d-flex justify-content-between fruite-name">
-                                                                <a href="/shop?target=THIET-KE-DO-HOA">
-                                                                    <i class="fas fa-apple-alt me-2"></i>THIẾT KẾ ĐỒ HỌA
-                                                                </a>
-                                                                <span>(3)</span>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="d-flex justify-content-between fruite-name">
-                                                                <a href="/shop?target=SINHVIEN-VANPHONG">
-                                                                    <i class="fas fa-apple-alt me-2"></i>SINH VIÊN - VĂN
-                                                                    PHÒNG
-                                                                </a>
-                                                                <span>(5)</span>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="d-flex justify-content-between fruite-name">
-                                                                <a href="/shop?target=MONG-NHE">
-                                                                    <i class="fas fa-apple-alt me-2"></i>MỎNG NHẸ
-                                                                </a>
-                                                                <span>(2)</span>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="d-flex justify-content-between fruite-name">
-                                                                <a href="/shop?target=GAMING">
-                                                                    <i class="fas fa-apple-alt me-2"></i>GAMING
-                                                                </a>
-                                                                <span>(8)</span>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="d-flex justify-content-between fruite-name">
-                                                                <a href="/shop?target=DOANH-NHAN">
-                                                                    <i class="fas fa-apple-alt me-2"></i>DOANH NHÂN
-                                                                </a>
-                                                                <span>(5)</span>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-                                            </div>
-                                            <form action="/shop" method="get">
-                                                <input type="hidden" name="target" value="${target}" />
-
-                                                <h4 class="mb-2">Giá tiền</h4>
-
-                                                <input type="range" class="form-range w-100" id="price" name="maxPrice"
-                                                    min="0" max="100000000"
-                                                    value="${param.maxPrice != null ? param.maxPrice : 100000000}"
-                                                    oninput="amount.value=this.value">
-
-                                                <output id="amount">${param.maxPrice != null ? param.maxPrice :
-                                                    100000000}</output>
-
-                                                <button type="submit" class="btn btn-sm btn-primary mt-2">
-                                                    Lọc
-                                                </button>
-                                            </form> -->
-
-                                            <!-- <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <h4>Thông tin bổ sung</h4>
-                                                    <div class="mb-2">
-                                                        <input type="radio" class="me-2" id="Categories-1"
-                                                            name="Categories-1" value="Beverages">
-                                                        <label for="Categories-1"> Đồ hữu cơ</label>
-                                                    </div>
-                                                    <div class="mb-2">
-                                                        <input type="radio" class="me-2" id="Categories-2"
-                                                            name="Categories-1" value="Beverages">
-                                                        <label for="Categories-2"> Đồ tươi</label>
-                                                    </div>
-                                                    <div class="mb-2">
-                                                        <input type="radio" class="me-2" id="Categories-3"
-                                                            name="Categories-1" value="Beverages">
-                                                        <label for="Categories-3"> Đang giảm giá</label>
-                                                    </div>
-                                                    <div class="mb-2">
-                                                        <input type="radio" class="me-2" id="Categories-3"
-                                                            name="Categories-1" value="Beverages">
-                                                        <label for="Categories-3"> Bán chạy</label>
-                                                    </div>
-
-                                                </div>
-                                            </div> -->
-                                        </div>
+                                           </div>
                                     </div>
                                     <div class="col-lg-9">
                                         <div class="row g-4 justify-content-center">
