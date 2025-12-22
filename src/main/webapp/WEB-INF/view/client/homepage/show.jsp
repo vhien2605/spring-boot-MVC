@@ -82,19 +82,22 @@
                                                             <div class="fruite-img">
                                                                 <a href="/product/${product.getId()}">
                                                                     <img src="/image/product/${product.getImage()}"
-                                                                        class="img-fluid w-100 rounded-top" alt="">
+                                                                        class="img-fluid w-100 h-400 object-fit-cover rounded-top"
+                                                                        alt="">
                                                                 </a>
                                                             </div>
-                                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                                style="top: 10px; left: 10px;">Laptop</div>
                                                             <div
                                                                 class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                                 <a href="/product/${product.getId()}">
                                                                     <h4 style="font-size: 15px;">${product.getName()}
                                                                     </h4>
                                                                 </a>
-                                                                <p style="font-size: 13px;">${product.getShortDesc()}
+                                                                <p class="product-desc"
+                                                                    title="${product.getShortDesc()}">
+                                                                    ${product.getShortDesc()}
                                                                 </p>
+
+
                                                                 <p style="font-size: 15; text-align: center; width: 100%;"
                                                                     class="text-dark fs-5 fw-bold mb-3">
                                                                     <fmt:formatNumber type="number"
@@ -122,11 +125,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- feature start -->
                                 <jsp:include page="../layout/feature.jsp" />
                                 <!-- feature end -->
-                                
+
                             </div>
                         </div>
                     </div>

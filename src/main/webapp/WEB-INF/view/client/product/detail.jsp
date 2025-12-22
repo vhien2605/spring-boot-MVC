@@ -68,10 +68,10 @@
                             <div class="col-lg-8 col-xl-9">
                                 <div class="row g-4">
                                     <div class="col-lg-6">
-                                        <div class="border rounded">
+                                        <div class="border rounded product-img-box">
                                             <a href="#">
                                                 <img src="/image/product/${product.getImage()}"
-                                                    class="img-fluid rounded" alt="Image">
+                                                    class="img-fluid rounded product-img" alt="Image">
                                             </a>
                                         </div>
                                     </div>
@@ -135,53 +135,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-lg-4 col-xl-3">
-                                <div class="row g-4 fruite">
-                                    <div class="col-lg-12">
-                                        <div class="input-group w-100 mx-auto d-flex mb-4">
-                                            <input type="search" class="form-control p-3" placeholder="keywords"
-                                                aria-describedby="search-icon-1">
-                                            <span id="search-icon-1" class="input-group-text p-3"><i
-                                                    class="fa fa-search"></i></span>
-                                        </div>
-                                        <div class="mb-4">
-                                            <h4>Categories</h4>
-                                            <ul class="list-unstyled fruite-categorie">
-                                                <li>
-                                                    <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Apple</a>
-                                                        <span>(3)</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Lenovo</a>
-                                                        <span>(5)</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Dell</a>
-                                                        <span>(2)</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Asus</a>
-                                                        <span>(8)</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>HP</a>
-                                                        <span>(5)</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>

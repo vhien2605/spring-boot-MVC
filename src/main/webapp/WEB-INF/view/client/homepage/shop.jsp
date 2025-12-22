@@ -126,16 +126,14 @@
                                                     <h4>Phân loại</h4>
                                                     <select name="target" class="form-select">
                                                         <option value="">-- Tất cả --</option>
-                                                        <option value="FOOD"
-                                                            ${param.target=='FOOD' ? 'selected' : '' }>
+                                                        <option value="FOOD" ${param.target=='FOOD' ? 'selected' : '' }>
                                                             Thực phẩm
                                                         </option>
-                                                        <option value="DRINK"
-                                                            ${param.target=='DRINK' ? 'selected' : '' }>
+                                                        <option value="DRINK" ${param.target=='DRINK' ? 'selected' : ''
+                                                            }>
                                                             Đồ uống
                                                         </option>
-                                                        <option value="TREE" ${param.target=='TREE' ? 'selected'
-                                                            : '' }>
+                                                        <option value="TREE" ${param.target=='TREE' ? 'selected' : '' }>
                                                             Thảo dược
                                                         </option>
                                                         <option value="CUSTOM" ${param.target=='CUSTOM' ? 'selected'
@@ -178,7 +176,7 @@
                                                 </button>
                                             </form>
 
-                                           </div>
+                                        </div>
                                     </div>
                                     <div class="col-lg-9">
                                         <div class="row g-4 justify-content-center">
@@ -189,13 +187,14 @@
                                                             <div class="rounded position-relative fruite-item">
                                                                 <div class="fruite-img">
                                                                     <a href="/product/${product.id}">
-                                                                        <img src="/image/product/${product.image}"
-                                                                            class="img-fluid w-100 rounded-top" alt="">
+                                                                        <img src="/image/product/${product.getImage()}"
+                                                                            class="img-fluid w-100 h-400 object-fit-cover rounded-top"
+                                                                            alt="">
                                                                     </a>
                                                                 </div>
 
                                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                                    style="top: 10px; left: 10px;">Laptop</div>
+                                                                    style="top: 10px; left: 10px;">${product.target}</div>
 
                                                                 <div
                                                                     class="p-4 border border-secondary border-top-0 rounded-bottom">
@@ -204,7 +203,10 @@
                                                                         </h4>
                                                                     </a>
 
-                                                                    <p style="font-size: 13px;">${product.shortDesc}</p>
+                                                                    <p class="product-desc">
+                                                                        ${product.shortDesc}
+                                                                    </p>
+
 
                                                                     <p class="text-dark fs-5 fw-bold mb-3 text-center">
                                                                         <fmt:formatNumber value="${product.price}" />
@@ -238,22 +240,6 @@
                                                 </c:otherwise>
 
                                             </c:choose>
-                                            <!-- <div class="col-md-6 col-lg-6 col-xl-4">
-                                                <div class="rounded position-relative fruite-item">
-                                                    <div class="fruite-img">
-                                                        <img src="img/item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
-                                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                        <h4>BÒ NẮNG</h4>
-                                                        <p>Thanh lọc cơ thể, cải thiện tiêu hóa , ngăn ngừa táo bón, cung cấp dinh dưỡng, năng lượng cho cơ thể</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
 
                                             <div class="col-12">
                                                 <div class="pagination d-flex justify-content-center mt-5">

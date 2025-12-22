@@ -12,14 +12,14 @@
                         <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active rounded">
-                                    <img src="/client/img/ultrabook.jpg"
+                                    <img src="/client/img/best-product-4.jpg"
                                         class="img-fluid w-100 h-100 bg-secondary rounded" alt="First slide">
-                                    <a href="#" class="btn px-4 py-2 text-white rounded">Laptop văn phòng</a>
+                                    <a href="#" class="btn px-4 py-2 text-white rounded">Thực phẩm</a>
                                 </div>
                                 <div class="carousel-item rounded">
-                                    <img src="/client/img/gaming.jpg" class="img-fluid w-100 h-100 rounded"
+                                    <img src="/client/img/best-product-5.jpg" class="img-fluid w-100 h-100 rounded"
                                         alt="Second slide">
-                                    <a href="#" class="btn px-4 py-2 text-white rounded">Laptop Gaming</a>
+                                    <a href="#" class="btn px-4 py-2 text-white rounded">Đồ uống</a>
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
