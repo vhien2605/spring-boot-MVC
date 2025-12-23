@@ -82,7 +82,8 @@
                                                             <div class="fruite-img">
                                                                 <a href="/product/${product.getId()}">
                                                                     <img src="/image/product/${product.getImage()}"
-                                                                        class="img-fluid w-100 h-400 object-fit-cover rounded-top"
+                                                                        class="rounded-top"
+                                                                        style="width: 100%; height: 250px; object-fit: cover; display: block;"
                                                                         alt="">
                                                                 </a>
                                                             </div>
